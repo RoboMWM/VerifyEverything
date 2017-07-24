@@ -33,8 +33,8 @@ public class PickupListener implements Listener
         ItemStack itemStack = event.getItem().getItemStack();
 
         int itemAmount = itemStack.getAmount();
-        instance.getLogger().info(String.valueOf(itemAmount));
         int inventoryAmount = getAmount(playerInventory, itemStack);
+        instance.getLogger().info(String.valueOf(itemAmount) + ", " + inventoryAmount);
         int totalOughtToHave = itemAmount + inventoryAmount;
 
         new BukkitRunnable()
@@ -57,7 +57,7 @@ public class PickupListener implements Listener
                         instance.getLogger().warning("Failed to remove " + failedToRemove + "items.");
                 }
             }
-        }.runTaskLater(instance, 2L); //Which means we should log-only
+        }.runTaskLater(instance, 20L); //Which means we should log-only
     }
 
     private int getAmount(PlayerInventory inventory, ItemStack itemStack)
