@@ -1,0 +1,6 @@
+name: VerifyEverything
+author: RoboMWM
+version: ${project.version}
+main: to.us.tf.verifyeverything.VerifyEverything
+commands:
+    verifyeverything: {}
