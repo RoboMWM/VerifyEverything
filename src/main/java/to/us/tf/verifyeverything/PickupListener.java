@@ -57,7 +57,7 @@ public class PickupListener implements Listener
                         instance.getLogger().warning("Failed to remove " + failedToRemove + "items.");
                 }
             }
-        }.runTaskLater(instance, 1L);
+        }.runTaskLater(instance, 2L); //Which means we should log-only
     }
 
     private int getAmount(PlayerInventory inventory, ItemStack itemStack)
