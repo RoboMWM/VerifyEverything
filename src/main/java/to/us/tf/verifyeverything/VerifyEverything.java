@@ -39,11 +39,13 @@ public class VerifyEverything extends JavaPlugin
         {
             HandlerList.unregisterAll(this);
             sender.sendMessage("Unregistered all listeners");
+            enabled = false;
         }
         else
         {
             registerListeners();
             sender.sendMessage("Registered listeners");
+            enabled = true;
         }
 
         return true;

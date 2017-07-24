@@ -33,7 +33,9 @@ public class PickupListener implements Listener
         ItemStack itemStack = event.getItem().getItemStack();
 
         int itemAmount = itemStack.getAmount();
+        instance.getLogger().info(String.valueOf(itemAmount));
         int inventoryAmount = getAmount(playerInventory, itemStack);
+        int totalOughtToHave = itemAmount + inventoryAmount;
 
         new BukkitRunnable()
         {
@@ -41,7 +43,7 @@ public class PickupListener implements Listener
             public void run()
             {
                 int newAmount = getAmount(event.getPlayer().getInventory(), itemStack);
-                if (newAmount != (itemAmount + inventoryAmount))
+                if (newAmount != (totalOughtToHave))
                 {
                     instance.getLogger().warning("Discrepency detected in amount of items picked up (potentially duplicating items?)");
                     instance.getLogger().warning("Player: " + event.getPlayer().getName()
