@@ -63,6 +63,8 @@ public class PickupListener implements Listener
         int amount = 0;
         for (ItemStack item : inventory)
         {
+            if (item == null)
+                continue;
             if (item.isSimilar(itemStack))
                 amount += item.getAmount();
         }
